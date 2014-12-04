@@ -8,4 +8,4 @@ COPY bin/start /app/bin/start
 RUN cd /app; npm install --production; npm cache clean
 
 EXPOSE  8080
-CMD ["node", "/app/init.js"]
+CMD ["/app/bin/start"]
