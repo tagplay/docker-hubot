@@ -1,0 +1,6 @@
+[
+{{range gets "/hubot/scripts/*"}}
+  "{{base .Key}}",
+{{end}}
+  "hubot-help"
+]

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+{{range gets "/hubot/packages/*"}}
+    "{{base .Key}}": "{{.Value}}",
+{{end}}
+    "hubot-help": "^0.1.1"
+  }
+}

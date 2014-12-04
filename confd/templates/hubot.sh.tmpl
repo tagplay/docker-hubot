@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z "$REDIS_TCP_6379_ADDR" ]; then
+  export REDIS_URL=$REDIS_TCP_6379_ADDR:$REDIS_TCP_6379_PORT
+fi
+
+{{range gets "/hubot/env/*"}}
+export {{base .Key}}="{{.Value}}"{{end}}
+
+exec node_modules/.bin/hubot --name {{ getv "/hubot/name" }} \
+  --adapter {{ getv "/hubot/adapter" }} --alias {{ getv "/hubot/alias" }}
+
+# exec node_modules/.bin/hubot --name {{ getv "/hubot/name" }} --alias {{ getv "/hubot/alias" }}

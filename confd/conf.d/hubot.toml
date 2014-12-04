@@ -1,0 +1,6 @@
+[template]
+src = "hubot.sh.tmpl"
+dest = "/app/bin/hubot.sh"
+keys = [
+  "/hubot",
+]

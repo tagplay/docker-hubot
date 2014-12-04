@@ -1,0 +1,6 @@
+[template]
+src = "external-scripts.json.tmpl"
+dest = "/app/external-scripts.json"
+keys = [
+  "/hubot/scripts",
+]

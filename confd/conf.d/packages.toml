@@ -1,0 +1,6 @@
+[template]
+src = "packages.json.tmpl"
+dest = "/app/extra_packages.json"
+keys = [
+  "/hubot/packages",
+]
