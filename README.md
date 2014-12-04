@@ -5,10 +5,10 @@
 
     etcdctl set /hubot/name mybot
     etcdctl set /hubot/alias Botter
-    etcdctl set /hubot/adapter gitter
-    etcdctl set /hubot/packages/hubot-gitter "0.0.3"
+    etcdctl set /hubot/adapter gitter2
+    etcdctl set /hubot/packages/hubot-gitter2 "0.1.3"
     etcdctl set /hubot/env/ROOM "acmecorp,acmecorp/uberapp"
-    etcdctl set /hubot/env/TOKEN "abc123"
+    etcdctl set /hubot/env/HUBOT_GITTER2_TOKEN "abc123"
 
 ## Extra NPM Packages
 
