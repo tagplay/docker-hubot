@@ -38,4 +38,10 @@
 
 ## Starting
 
-    docker run --name hubot --link redis:redis quay.io/tagplay/hubot
+First start a redis instance
+
+    docker run -d --name redis redis:2.8
+
+    docker run -d --name hubot --link redis:redis  \
+      --env "HUBOT_LOG_LEVEL=debug" --env "ETCD=http://<ETCDIP>:4001" \
+      quay.io/tagplay/hubot:latest
