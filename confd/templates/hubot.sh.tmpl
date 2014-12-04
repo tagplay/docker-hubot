@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z "$REDIS_TCP_6379_ADDR" ]; then
-  export REDIS_URL=$REDIS_TCP_6379_ADDR:$REDIS_TCP_6379_PORT
+  export REDIS_URL=$REDIS_TCP_6379_ADDR:$REDIS_TCP_6379_PORT/hubot
 fi
 
 {{range gets "/hubot/env/*"}}
