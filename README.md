@@ -38,9 +38,7 @@
 
 ## Starting
 
-First start a redis instance
-
-    docker run -d --name redis redis:2.8
+The bot uses etcd for both configuration and brain data. 
 
     docker run -d --name hubot \
       --env "HUBOT_ETCD_HOST=<ETCD_IP>" --env "HUBOT_ETCD_PORT=4001" \
