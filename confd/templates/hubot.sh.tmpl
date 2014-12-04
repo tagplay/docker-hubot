@@ -6,5 +6,3 @@ export {{base .Key}}="{{.Value}}"{{end}}
 
 exec node_modules/.bin/hubot --name {{ getv "/hubot/name" }} \
   --adapter {{ getv "/hubot/adapter" }} --alias {{ getv "/hubot/alias" }}
-
-# exec node_modules/.bin/hubot --name {{ getv "/hubot/name" }} --alias {{ getv "/hubot/alias" }}
