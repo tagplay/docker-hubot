@@ -30,6 +30,13 @@
     etcdctl set /hubot/scripts/hubot-rules  true
     etcdctl set /hubot/scripts/hubot-google-images true
 
+## Load Scripts from hubot-scripts
+
+Note: You are responsible yourself for adding required npm packages into `/hubot/packages/*`
+
+    etcdctl set /hubot/hubot-scripts/achievement_unlocked.coffee true
+    etcdctl set /hubot/hubot-scripts/github-credentials.coffee true
+
 ## Set Environment Variables
 
     etcdctl set /hubot/env/TEST_ENV "Hello World"
@@ -38,8 +45,8 @@
 
 ## Starting
 
-The bot uses etcd for both configuration and brain data. 
+The bot uses etcd for both configuration and brain data.
 
-    docker run -d --name hubot \
+    docker run -d --name hubot --port <HOST_PORT>:8080\
       --env "HUBOT_ETCD_HOST=<ETCD_IP>" --env "HUBOT_ETCD_PORT=4001" \
       quay.io/tagplay/hubot:latest
