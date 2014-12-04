@@ -6,7 +6,7 @@
   "description": "A helpful robot. Hosted by Docker. Configured by Etcd. Child tested, mother approved.",
   "dependencies": {
     "hubot": "^2.9.3",
-    "hubot-redis-brain": "0.0.2",
+    "hubot-etcd-brain": "0.1.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-scripts": "^2.5.16",
     "npm-install-extra-packages": "^0.1.0"

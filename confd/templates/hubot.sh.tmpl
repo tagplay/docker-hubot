@@ -1,9 +1,6 @@
 #!/bin/sh
 
-if [ -z "$REDIS_TCP_6379_ADDR" ]; then
-  export REDIS_URL=$REDIS_TCP_6379_ADDR:$REDIS_TCP_6379_PORT/hubot
-fi
-
+export HUBOT_ETCD_BRAIN_KEY='/hubot/brain/dump'
 {{range gets "/hubot/env/*"}}
 export {{base .Key}}="{{.Value}}"{{end}}
 

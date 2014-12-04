@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
-confd -verbose -onetime -node $ETCD
+
+if [ -z "$HUBOT_ETCD_KEY_FILE" ]; then
+  export CONFD_PARAMS="-client-ca-keys='$HUBOT_ETCD_CA_FILE' -client-cert='$HUBOT_ETCD_CERT_FILE' -client-key='$HUBOT_ETCD_KEY_FILE'"
+fi
+confd -verbose -onetime -node $HUBOT_ETCD_HOST:$HUBOT_ETCD_PORT $CONFD_PARAMS
 
 cd /app
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
