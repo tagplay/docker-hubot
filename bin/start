@@ -1,11 +1,17 @@
 #!/bin/sh
 set -e
 
+NODE=$HUBOT_ETCD_HOST
+
+if [ -z "$HUBOT_ETCD_PORT" ]; then
+  NODE=$NODE:$HUBOT_ETCD_PORT
+fi
+
 if [ -z "$HUBOT_ETCD_KEY_FILE" ]; then
-  confd -verbose -onetime -node $HUBOT_ETCD_HOST:$HUBOT_ETCD_PORT $CONFD_PARAMS \
+  confd -verbose -onetime -node $NODE $CONFD_PARAMS \
   -client-ca-keys="$HUBOT_ETCD_CA_FILE" -client-cert="$HUBOT_ETCD_CERT_FILE" -client-key="$HUBOT_ETCD_KEY_FILE"
 else
-  confd -verbose -onetime -node $HUBOT_ETCD_HOST:$HUBOT_ETCD_PORT $CONFD_PARAMS
+  confd -verbose -onetime -node $NODE $CONFD_PARAMS
 fi
 
 cd /app
