@@ -3,7 +3,7 @@ set -e
 
 NODE=$HUBOT_ETCD_HOST
 
-if [ -z "$HUBOT_ETCD_PORT" ]; then
+if [ -n "$HUBOT_ETCD_PORT" ]; then
   NODE=$NODE:$HUBOT_ETCD_PORT
 fi
 
