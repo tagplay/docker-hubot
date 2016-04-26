@@ -1,6 +1,6 @@
 [
-{{range gets "/hubot/hubot-scripts/*"}}
-  "{{base .Key}}",
+{{range ls "/hubot/hubot-scripts"}}
+  "{{.}}",
 {{end}}
   "hello"
 ]
