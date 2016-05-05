@@ -5,4 +5,5 @@ export HUBOT_ETCD_BRAIN_KEY='/hubot/brain/dump'
 export {{base .Key}}="{{.Value}}"{{end}}
 
 exec node_modules/.bin/hubot --name {{ getv "/hubot/name" }} \
-  --adapter {{ getv "/hubot/adapter" }} --alias {{ getv "/hubot/alias" }}
+  --adapter {{ getv "/hubot/adapter" }} --alias {{ getv "/hubot/alias" }} \
+  {{if exists "/hubot/requires"}} --require {{getv "/hubot/requires"}} {{end}}

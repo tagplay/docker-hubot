@@ -8,10 +8,10 @@ if [ -n "$HUBOT_ETCD_PORT" ]; then
 fi
 
 if [ -z "$HUBOT_ETCD_KEY_FILE" ]; then
-  confd -verbose -onetime -node $NODE $CONFD_PARAMS \
+  confd -onetime -node $NODE $CONFD_PARAMS \
   -client-ca-keys="$HUBOT_ETCD_CA_FILE" -client-cert="$HUBOT_ETCD_CERT_FILE" -client-key="$HUBOT_ETCD_KEY_FILE"
 else
-  confd -verbose -onetime -node $NODE $CONFD_PARAMS
+  confd -onetime -node $NODE $CONFD_PARAMS
 fi
 
 cd /app

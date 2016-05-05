@@ -56,7 +56,12 @@ Note: You are responsible yourself for adding required npm packages into `/hubot
     etcdctl set /hubot/env/TEST_ENV "Hello World"
     etcdctl set /hubot/env/GITHUB_API_TOKEN "abcdefg"
 
+### Add additional scripts path to hubot startup (--require parameter)
 
+Note: You will want to share this path on the container startup 
+   
+    etcdctl set /hubot/requires /hubot/packages
+   
 ## Starting Hubot
 
 The bot uses etcd for both configuration and brain data.
